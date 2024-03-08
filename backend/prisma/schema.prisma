@@ -24,9 +24,10 @@ model User {
 
 model Post{
   id String @id @default(uuid())
+  authorId String
   title String
   content String
   published Boolean @default(false)
   author User @relation(fields: [authorId],references: [id])
-  authorId String
+
 }
